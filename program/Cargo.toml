@@ -1,0 +1,27 @@
+[package]
+name = "solana-bpf-verifier-program"
+version = "0.1.0"
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+num-traits = { workspace = true }
+solana-bpf-verifier = { path = "../verifier" }
+solana-program = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+mollusk-svm = { workspace = true }
+solana-sdk = { workspace = true }
+
+[features]
+bpf-entrypoint = []
+test-sbf = []
+
+[package.metadata.solana]
+program-id = "BPFVerifier111111111111111111111111111111111"
